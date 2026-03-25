@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Presentation.WebApp.Controllers.Public;
+namespace Presentation.WebApp.Controllers.Me;
 
-
-[Route("")]
-public class HomeController : Controller
+[Route("me/membership")]
+[Authorize(Roles = "Member")]
+public class MeMembershipController : Controller
 {
     [HttpGet("")]
-    [AllowAnonymous]
     public IActionResult Index()
     {
         return View();

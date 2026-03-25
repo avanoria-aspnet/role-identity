@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Presentation.WebApp.Controllers.Public;
+namespace Presentation.WebApp.Controllers;
 
 [Route("training")]
 public class TrainingController : Controller

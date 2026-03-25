@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Presentation.WebApp.Controllers.Authentication;
+namespace Presentation.WebApp.Areas.Authentication.Controllers;
 
-
+[Area("Authentication")]
 public class AuthenticationController : Controller
 {
     [HttpGet("registration/sign-up")]
@@ -12,6 +12,8 @@ public class AuthenticationController : Controller
     {
         if (User.Identity?.IsAuthenticated == true)
             return RedirectToAction("Index", "My");
+
+        ViewData["Title"] = "Become a Member";
 
         return View();
     }
@@ -24,6 +26,8 @@ public class AuthenticationController : Controller
         if (User.Identity?.IsAuthenticated == true)
             return RedirectToAction("Index", "My");
 
+        ViewData["Title"] = "Set Password";
+
         return View();
     }
 
@@ -34,6 +38,8 @@ public class AuthenticationController : Controller
         if (User.Identity?.IsAuthenticated == true)
             return RedirectToAction("Index", "My");
 
+        ViewData["Title"] = "Sign In";
+
         return View();
     }
 
@@ -41,6 +47,6 @@ public class AuthenticationController : Controller
     [Authorize]
     public new IActionResult SignOut()
     {
-        return View();
+        return RedirectToAction(nameof(SignIn));
     }
 }

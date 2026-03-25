@@ -1,16 +1,16 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Presentation.WebApp.Controllers.Public;
+namespace Presentation.WebApp.Controllers;
 
-[Route("fitness-centers")]
-public class FitnessCentersController : Controller
+[Route("support")]
+public class SupportController : Controller
 {
     [HttpGet("")]
     [AllowAnonymous]
     public IActionResult Index()
     {
-        ViewData["Title"] = "Our Fitness Centers";
+        ViewData["Title"] = "Customer Service";
         return View();
     }
 }

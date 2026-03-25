@@ -254,6 +254,20 @@ a {
     padding: 1rem;
 }
 
+.admin-layout {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100dvh;
+    padding: 1rem;
+}
+
+.me-layout {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100dvh;
+    padding: 1rem;
+}
+
 .auth-layout {
     display: grid;
     grid-template-rows: auto 1fr;

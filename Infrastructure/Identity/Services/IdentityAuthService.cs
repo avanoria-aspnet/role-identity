@@ -63,5 +63,5 @@ public class IdentityAuthService(UserManager<AppUser> userManager, SignInManager
     }
 
 
-    public Task SignOutUserAync() => signInManager.SignOutAsync();
+    public Task SignOutUserAsync() => signInManager.SignOutAsync();
 }

@@ -49,14 +49,14 @@ public class IdentityAuthService(UserManager<AppUser> userManager, SignInManager
         if (user is null)
             return new AuthResult(false, "Incorrect email address or password");
 
-        var result = await signInManager.PasswordSignInAsync(email, password, rememberMe, true);
+        var result = await signInManager.PasswordSignInAsync(email, password, rememberMe, false);
         if (!result.Succeeded)
             return new AuthResult(false, "Incorrect email address or password");
 
-        if (!result.IsLockedOut)
+        if (result.IsLockedOut)
             return new AuthResult(false, "User has been temporary blocked.");
 
-        if (!result.IsNotAllowed)
+        if (result.IsNotAllowed)
             return new AuthResult(false, "User is not allowed to sign in");
 
         return new AuthResult(true);

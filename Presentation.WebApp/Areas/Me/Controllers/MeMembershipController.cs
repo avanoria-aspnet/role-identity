@@ -5,7 +5,7 @@ namespace Presentation.WebApp.Areas.Me.Controllers;
 
 [Area("Me")]
 [Route("me/membership")]
-//[Authorize(Roles = "Member")]
+[Authorize(Roles = "Member")]
 public class MeMembershipController : Controller
 {
     [HttpGet("")]

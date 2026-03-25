@@ -5,7 +5,7 @@ namespace Presentation.WebApp.Areas.Admin.Controllers;
 
 [Area("Admin")]
 [Route("admin/employees")]
-//[Authorize(Roles = "Admin")]
+[Authorize(Roles = "Admin")]
 public class AdminEmployeesController : Controller
 {
 

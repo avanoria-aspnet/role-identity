@@ -5,7 +5,7 @@ namespace Presentation.WebApp.Areas.Admin.Controllers;
 
 [Area("Admin")]
 [Route("admin/contact-requests")]
-//[Authorize(Roles = "Admin, Employee")]
+[Authorize(Roles = "Admin, Employee")]
 public class AdminContactRequestsController : Controller
 {
 

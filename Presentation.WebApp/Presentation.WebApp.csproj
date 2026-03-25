@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Authentication\Models\" />
     <Folder Include="Areas\Me\Models\" />
     <Folder Include="Models\" />
   </ItemGroup>
